@@ -38,4 +38,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: openapi.json
-          path: path/to/artifact/world.txt
+          path: file.openapi3.json
