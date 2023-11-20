@@ -34,6 +34,8 @@ jobs:
       # Convert the XML to OpenAPI JSON
       - name: Convert
         run: odata-openapi3 file.xml
-      - run: git add -A
-      - run: git commit -m "save"
-      - run: git push
+      # Upload the converted file to the build output
+      - uses: actions/upload-artifact@v3
+        with:
+          name: openapi.json
+          path: path/to/artifact/world.txt
