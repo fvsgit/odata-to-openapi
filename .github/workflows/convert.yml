@@ -34,8 +34,6 @@ jobs:
       # Download XML content
       - name: Download Metadata
         run: wget -S '${{ github.event.inputs.url }}' -O metadata.xml
-      - run: ls -la
-      - run: cat metadata.xml
       # Convert the XML to OpenAPI JSON
       - name: Convert
         run: odata-openapi3 metadata.xml
