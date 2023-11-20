@@ -28,7 +28,7 @@ jobs:
         run: npm install -g odata-openapi
       # Download XML content
       - name: Download Metadata
-        run: wget -S 'https://services.odata.org/V3/Northwind/Northwind.svc/$metadata'
+        run: wget -S 'https://services.odata.org/V3/Northwind/Northwind.svc/$metadata' -O file.xml
       - run: ls -la
       # Convert the XML to OpenAPI JSON
       - name: Convert
