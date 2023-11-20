@@ -28,13 +28,13 @@ jobs:
         run: npm install -g odata-openapi
       # Download XML content
       - name: Download Metadata
-        run: wget -S 'https://services.odata.org/V3/Northwind/Northwind.svc/$metadata' -O file.xml
+        run: wget -S 'https://services.odata.org/V3/Northwind/Northwind.svc/$metadata' -O metadata.xml
       - run: ls -la
       # Convert the XML to OpenAPI JSON
       - name: Convert
-        run: odata-openapi3 file.xml
+        run: odata-openapi3 metadata.xml
       # Upload the converted file to the build output
       - uses: actions/upload-artifact@v3
         with:
           name: openapi.json
-          path: file.openapi3.json
+          path: metadata.openapi3.json
